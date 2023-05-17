@@ -1,0 +1,55 @@
+expression
+    : variable_definition
+    | method_call
+    | operator_call
+    | string_literal
+    | numeric_literal
+    | lambda_definition
+    | comment
+    | expression expression
+    ;
+
+variable_definition
+    : var /[\d\w]+/ "=" numeric_literal
+    | var /[\d\w]+/ "=" string_literal
+    | var /[\d\w]+/ "=" lambda_definition
+    ;
+
+string_literal: "\"" /.+/ "\"" 
+    ;
+
+numeric_literal: /\d+/
+    ;
+
+parameter_list: "()"
+    ;
+
+lambda_definition
+    : "fun" "(" parameter_list ")" "->" expression
+
+method_call
+    : do variable_reference "." method_reference "(" argument_list ")"
+    : method_call "." method_reference "(" argument_list ")"
+    ;
+
+argument_list
+    : ""
+    | expression
+    | expression "," argument_list
+    ;
+
+method_reference
+    : /[\d\w]+/
+    ;
+
+variable_reference
+    : /[\d\w]+/
+    ;
+
+operator_call
+    : variable_reference "+=" variable_reference
+    : variable_reference "+" variable_reference
+    ;
+
+comment: "#" /.*$/
+    ;
