@@ -10,8 +10,7 @@ let client: LanguageClient
 export function activate(context: vscode.ExtensionContext) {
     console.log("activate")
     const serverExecutable = 'dotnet'
-    const assemblyPath = '/home/bearpro/Source/repos/language-server-sample/bin/Debug/net6.0/langauge-server-sample.dll'
-
+    const assemblyPath = 'C:/Users/bearp/source/personal/language-server-sample/server/bin/Debug/net6.0/langauge-server-sample.dll'
     const serverOptions: ServerOptions = {
         run: { command: serverExecutable, args: [assemblyPath] },
         debug: { command: serverExecutable, args: [assemblyPath] }
@@ -22,7 +21,7 @@ export function activate(context: vscode.ExtensionContext) {
         synchronize: {
             // Synchronize the setting section 'languageServerExample' to the server
             configurationSection: "languageServerExample",
-            fileEvents: vscode.workspace.createFileSystemWatcher("**/*.cs"),
+            fileEvents: vscode.workspace.createFileSystemWatcher("**/*.smpl.dssh"),
         },
     }
 
@@ -30,6 +29,7 @@ export function activate(context: vscode.ExtensionContext) {
     client.registerProposedFeatures()
     client.setTrace(Trace.Verbose)
     client.start()
+    let x = 0
 }
 
 // This method is called when your extension is deactivated

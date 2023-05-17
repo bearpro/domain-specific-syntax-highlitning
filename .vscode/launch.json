@@ -21,7 +21,7 @@
         {
             "name": ".NET Core Attach",
             "type": "coreclr",
-            "request": "attach"
+            "request": "attach",
         },
         // client:
         {
@@ -29,11 +29,13 @@
             "type": "extensionHost",
             "request": "launch",
             "args": [
-                "--extensionDevelopmentPath=${workspaceFolder}"
+                "--extensionDevelopmentPath=${workspaceFolder}/client"
             ],
             "outFiles": [
                 "${workspaceFolder}/client/out/**/*.js"
             ],
+            "cwd": "client",
+            "sourceMaps": true,
             "preLaunchTask": "${defaultBuildTask}"
         },
         {
