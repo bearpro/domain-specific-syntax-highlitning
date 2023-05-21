@@ -14,21 +14,31 @@
   "contributes": {
     "languages": [
       {
-        "id": "smpl-dssh",
+        "id": "dsh",
         "aliases": [
-          "Sample domain syntax highlighting",
-          "smpl.dssh"
+          "Domain Specific Syntax Highlighting",
+          "dsh"
         ],
         "extensions": [
-          ".smpl.dssh"
+          ".dsh"
         ],
         "configuration": "./language-configuration.json"
+      },
+      {
+        "id": "dsh-config",
+        "aliases": [
+          "Domain Specific Syntax Highlighting Config",
+          "dsh-config"
+        ],
+        "extensions": [
+          ".dsh.conf"
+        ]
       }
     ],
     "commands": [
       {
-        "command": "client.helloWorld",
-        "title": "Hello World"
+        "command": "client.setup-config",
+        "title": "Domain Specific Highlitning: Setup config"
       }
     ]
   },

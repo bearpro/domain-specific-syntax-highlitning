@@ -20,7 +20,7 @@ public class SemanticTokensHandler : SemanticTokensHandlerBase
     {
         return new SemanticTokensRegistrationOptions
         {
-            DocumentSelector = DocumentSelector.ForPattern("**/*.smpl.dssh"),
+            DocumentSelector = DocumentSelector.ForPattern("**/*.dsh"),
             Legend = new SemanticTokensLegend
             {
                 TokenTypes = new Container<SemanticTokenType>(
