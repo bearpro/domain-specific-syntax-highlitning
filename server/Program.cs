@@ -3,18 +3,13 @@ using Serilog;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
 
-// using Microsoft.Extensions.Configuration;
-// using Microsoft.Extensions.DependencyInjection;
-// using Newtonsoft.Json.Linq;
-// using OmniSharp.Extensions.LanguageServer.Protocol.Models;
-
 var logger = Log.Logger = new LoggerConfiguration()
     .Enrich.FromLogContext()
     .WriteTo.File("log.txt")
     .MinimumLevel.Verbose()
     .CreateLogger();
 
-logger.Information("Setupping server");
+logger.Information("Setting up server");
 
 var server = await LanguageServer.From(options => options
     .WithInput(Console.OpenStandardInput())

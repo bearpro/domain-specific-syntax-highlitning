@@ -36,7 +36,8 @@ public class SemanticTokensHandler : SemanticTokensHandlerBase
                     "concurrency-captured",
                     "concurrency-modified",
                     "ui-captured",
-                    SemanticTokenModifier.Async
+                    SemanticTokenModifier.Async,
+                    SemanticTokenModifier.Declaration
                 )
             },
             Full = true
@@ -64,6 +65,8 @@ public class SemanticTokensHandler : SemanticTokensHandlerBase
 
         var content = await File.ReadAllLinesAsync(path, cancellationToken)
             .ConfigureAwait(false);
+
+        var variableRegistry = new List<string>();
 
         foreach (var (lineContent, lineNumber) in content.Select((l, i) => (l, i)))
         {
@@ -113,13 +116,14 @@ public class SemanticTokensHandler : SemanticTokensHandlerBase
                     match.Index);
             }
 
-            var foundVariables = FindKeywords(lineContent, new [] {
-                "shared_counter",
-                "increment",
-                "counter_label",
-                "counterId",
-                "sql_session",
-                "ui"});
+            var variableDeclarationMatch = Regex.Match(lineContent, "var\\s([\\w\\d]+)");
+            if (variableDeclarationMatch.Success)
+            {
+                var varaibleName = variableDeclarationMatch.Groups[1].Value;
+                variableRegistry.Add(varaibleName);
+            }
+
+            var foundVariables = FindKeywords(lineContent, variableRegistry.ToArray());
             foreach (var (keywordStart, keywordLen, variable) in foundVariables)
             {
                 string[] modifiers = variable switch 
@@ -131,6 +135,12 @@ public class SemanticTokensHandler : SemanticTokensHandlerBase
                     "ui" => Array.Empty<string>(),
                     _ => Array.Empty<string>()
                 };
+
+                if (variableDeclarationMatch.Success && 
+                    variableDeclarationMatch.Groups[1].Value == variable)
+                {
+                    modifiers = modifiers.Append((string)SemanticTokenModifier.Declaration).ToArray();
+                }
 
                 queue.Enqueue((
                     keywordStart,
@@ -156,26 +166,25 @@ public class SemanticTokensHandler : SemanticTokensHandlerBase
     protected List<(int, int, string)> FindKeywords(
         string line, 
         string[] keywords, 
-        int startFrom = 0,
         List<(int, int, string)>? foundKeywords = null)
     {
         foundKeywords ??= new();
 
         var keywordIndex = -1;
-        var keywordLenght = 0;
+        var keywordLength = 0;
         string? foundKeyword = null;
 
         foreach (var keyword in keywords)
         {
-            var index = line.IndexOf(keyword, startIndex: startFrom);
+            var index = line.IndexOf(keyword);
             if (index != -1)
             {
                 keywordIndex = index;
-                keywordLenght = keyword.Length;
+                keywordLength = keyword.Length;
                 foundKeyword = keyword;
+                line = line.Remove(index, keywordLength);
                 break;
             }
-            continue;
         }
 
         if (keywordIndex == -1)
@@ -183,9 +192,8 @@ public class SemanticTokensHandler : SemanticTokensHandlerBase
             return foundKeywords;
         }
 
-        startFrom = keywordIndex + keywordLenght;
-        foundKeywords.Add((keywordIndex, keywordLenght, foundKeyword!));
+        foundKeywords.Add((keywordIndex, keywordLength, foundKeyword!));
         
-        return FindKeywords(line, keywords, startFrom, foundKeywords);
+        return FindKeywords(line, keywords, foundKeywords);
     }
 }
