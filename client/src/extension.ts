@@ -30,7 +30,10 @@ export function activate(context: vscode.ExtensionContext) {
 
 function activateLanguageClient() {
     const serverExecutable = 'dotnet';
-    const assemblyPath = '/home/bearpro/Source/repos/language-server-sample/server/bin/Debug/net6.0/langauge-server-sample.dll';
+    const assemblyPath = process.env.DSH_LANG_SERVER_DLL_PATH 
+    if (!assemblyPath)
+        throw new Error("Environment variable DSH_LANG_SERVER_DLL_PATH not set.");
+    
     const serverOptions: ServerOptions = {
         run: { command: serverExecutable, args: [assemblyPath] },
         debug: { command: serverExecutable, args: [assemblyPath] }
