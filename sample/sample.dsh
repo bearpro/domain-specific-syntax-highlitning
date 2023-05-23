@@ -1,15 +1,19 @@
 # process data in parallel
 var shared_counter = 100;
 var increment = 1;
-do Thread.Start(fun () -> do shared_counter += increment)
-do Thread.Start(fun () -> do shared_counter += increment)
+do Thread.Start(fun () -> 
+    do shared_counter += increment)
+do Thread.Start(fun () -> 
+    do shared_counter += increment)
 do shared_counter++;
 # update view
 var counter_label = "count"
 do ui.findLabel("counter")
-    .setText(counter_label + " = " 
+    .setText(counter_label + " = "
            + shared_counter)
 # update SQL
 var counterId = 10
 do sql_session.execute_sql(
-    "update Counters set counter = @1 where Id = @2", shared_counter, counterId)
+    "update Counters set counter = @1"
+     + "where Id = @2", 
+    shared_counter, counterId)
