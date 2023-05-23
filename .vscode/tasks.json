@@ -25,7 +25,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/server/langauge-server-sample.csproj",
+                "${workspaceFolder}/server/langauge-server-sample.sln",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],

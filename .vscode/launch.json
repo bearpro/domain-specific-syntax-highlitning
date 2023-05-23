@@ -39,12 +39,12 @@
             "preLaunchTask": "${defaultBuildTask}",
             "windows": {
                 "env": {
-                    "DSH_LANG_SERVER_DLL_PATH": "C:/Users/bearp/source/personal/language-server-sample/server/bin/Debug/net7.0/langauge-server-sample.dll"
+                    "DSH_LANG_SERVER_DLL_PATH": "C:/Users/bearp/source/personal/language-server-sample/server/LanguageServer/bin/Debug/net7.0/langauge-server-sample.dll"
                 }
             },
             "linux": {
                 "env": {
-                    "DSH_LANG_SERVER_DLL_PATH": "/home/bearpro/Source/repos/language-server-sample/server/bin/Debug/net6.0/langauge-server-sample.dll"
+                    "DSH_LANG_SERVER_DLL_PATH": "/home/bearpro/Source/repos/language-server-sample/server/LanguageServer/bin/Debug/net7.0/langauge-server-sample.dll"
                 }
             }
         },
