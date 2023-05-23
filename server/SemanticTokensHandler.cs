@@ -174,34 +174,32 @@ public class SemanticTokensHandler : SemanticTokensHandlerBase
     protected List<(int, int, string)> FindKeywords(
         string line, 
         string[] keywords, 
+        int startIndex = 0,
         List<(int, int, string)>? foundKeywords = null)
     {
         foundKeywords ??= new();
 
-        var keywordIndex = -1;
+        int? keywordIndex = null;
         var keywordLength = 0;
         string? foundKeyword = null;
 
         foreach (var keyword in keywords)
         {
-            var index = line.IndexOf(keyword);
-            if (index != -1)
+            var index = line.IndexOf(keyword, startIndex);
+            if (index != -1 && (!keywordIndex.HasValue || index < keywordIndex))
             {
                 keywordIndex = index;
                 keywordLength = keyword.Length;
                 foundKeyword = keyword;
-                line = line.Remove(index, keywordLength);
-                break;
             }
         }
 
-        if (keywordIndex == -1)
+        if (keywordIndex is not int foundIndex)
         {
             return foundKeywords;
         }
-
-        foundKeywords.Add((keywordIndex, keywordLength, foundKeyword!));
         
-        return FindKeywords(line, keywords, foundKeywords);
+        foundKeywords.Add((foundIndex, keywordLength, foundKeyword!));
+        return FindKeywords(line, keywords, foundIndex + keywordLength, foundKeywords);
     }
 }
