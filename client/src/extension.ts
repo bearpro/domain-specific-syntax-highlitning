@@ -17,13 +17,11 @@ export function activate(context: vscode.ExtensionContext) {
             return;
         }
         const folders = vscode.workspace.workspaceFolders ?? []
-
-        const wsPath = folders[0].uri.fsPath; // gets the path of the first workspace folder
+        const wsPath = folders[0].uri.fsPath;
         const filePath = vscode.Uri.file(wsPath + '/domains.dsh.conf');
-        vscode.window.showInformationMessage(filePath.toString());
-        wsedit.createFile(filePath, { ignoreIfExists: true });
+        wsedit.createFile(filePath, { ignoreIfExists: true, contents: Buffer.from("abc\n    xyz\n    lol-kek") });
         vscode.workspace.applyEdit(wsedit);
-        vscode.window.showInformationMessage('Configuration file created');
+        vscode.window.showInformationMessage(`Configuration file created (${filePath})`);
     }
     context.subscriptions.push(
         vscode.commands.registerCommand(commandId, commandHandler)
@@ -39,10 +37,16 @@ function activateLanguageClient() {
     };
 
     const clientOptions: LanguageClientOptions = {
-        documentSelector: ["**/*.dsh"],
+        documentSelector: [
+            "**/*.dsh",
+            "**/*.dsh.conf",
+        ],
         synchronize: {
             configurationSection: "languageServerExample",
-            fileEvents: vscode.workspace.createFileSystemWatcher("**/*.smpl.dssh"),
+            fileEvents: [
+                vscode.workspace.createFileSystemWatcher("**/*.dsh"),
+                vscode.workspace.createFileSystemWatcher("**/*.dsh.conf"),
+            ]
         },
     };
 

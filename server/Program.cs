@@ -3,6 +3,8 @@ using Serilog;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
 
+using LanguageServerSample;
+
 var logger = Log.Logger = new LoggerConfiguration()
     .Enrich.FromLogContext()
     .WriteTo.File("log.txt")
@@ -19,11 +21,13 @@ var server = await LanguageServer.From(options => options
         .AddLanguageProtocolLogging()
         .SetMinimumLevel(LogLevel.Debug))
     .WithHandler<SemanticTokensHandler>()
+    // .WithHandler<ConfigurationUpdateHandler>()
     .WithServices(x => x.AddLogging(b => b.SetMinimumLevel(LogLevel.Trace)))
     .WithServices(
         services =>
         {
             logger.Information("Configuring services");
+            services.AddSingleton<ConfigurationStateHolder>();
         }
     )
     .OnInitialize(

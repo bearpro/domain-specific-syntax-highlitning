@@ -5,6 +5,8 @@ using OmniSharp.Extensions.LanguageServer.Protocol.Client.Capabilities;
 using OmniSharp.Extensions.LanguageServer.Protocol.Document;
 using OmniSharp.Extensions.LanguageServer.Protocol.Models;
 
+namespace LanguageServerSample;
+
 public class SemanticTokensHandler : SemanticTokensHandlerBase
 {
     private readonly ILogger _logger;
@@ -20,7 +22,7 @@ public class SemanticTokensHandler : SemanticTokensHandlerBase
     {
         return new SemanticTokensRegistrationOptions
         {
-            DocumentSelector = DocumentSelector.ForPattern("**/*.dsh"),
+            DocumentSelector = DocumentSelector.ForPattern("**/*.dsh", "**/*.dsh.conf"),
             Legend = new SemanticTokensLegend
             {
                 TokenTypes = new Container<SemanticTokenType>(
@@ -60,6 +62,12 @@ public class SemanticTokensHandler : SemanticTokensHandlerBase
         if (path is null)
         {
             _logger.LogWarning("Invalid document identifier: {identifier}", identifier);
+            return;
+        }
+
+        if (path.EndsWith(".dsh.conf"))
+        {
+            _logger.LogInformation("Configuration!");
             return;
         }
 
