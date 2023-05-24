@@ -40,7 +40,7 @@ let ``Configuration statements sucessfully parsed to a tree`` () =
         { nesting = 4; identifier = "c.1"; ratio = 0. }
     ]
     
-    let result = listToTree2 input []
+    let result = listToTreeHelper input
     //let result = listToTreeHelper input
 
     let expected = [

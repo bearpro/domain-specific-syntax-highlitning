@@ -56,31 +56,35 @@ let parseConfig path = task {
     
 }
 
-let rec foldStack stopAt stack = 
+let foldStack stack = 
     match stack with
     | [] -> []
     | [single] -> [single]
-    | (_, n) :: _ when n < stopAt -> stack
-    | (_, n1) :: (_, n2) :: _ when n1 = n2 -> stack
-    | (i1, n1) :: (i2, n2) :: rest when n1 > n2 ->
+    | (i1, _) :: (i2, n2) :: rest ->
         let i2 = { i2 with childItems = i1 :: i2.childItems}
         let stack = (i2, n2) :: rest
-        foldStack stopAt stack
+        stack
 
 let rec listToTree2 (items: Statement list) stack =
-    match items, stack with
-    | head :: tail, [] ->
+    let stackTopNesting = 
+        match stack with
+        | [] -> -1
+        | (_, nesting) :: _ -> nesting
+    
+    match items with
+    | head :: tail when head.nesting > stackTopNesting ->
         let newStackTop = { key = head.identifier; ratio = head.ratio; childItems = [] }, head.nesting
-        listToTree2 tail [newStackTop]
-    | head :: tail, (stackTop, stackTopNesting) :: stackTail 
-        when head.nesting > stackTopNesting ->
-            let newStackTop = { key = head.identifier; ratio = head.ratio; childItems = [] }, head.nesting
-            let stack = newStackTop :: (stackTop, stackTopNesting) :: stackTail
-            listToTree2 tail stack
-    | head :: tail, (_, stackTopNesting) :: _ 
-        when head.nesting <= stackTopNesting ->
-            let foldedStack = foldStack head.nesting stack 
-            let newStackTop = { key = head.identifier; ratio = head.ratio; childItems = [] }, head.nesting
-            let stack = newStackTop :: foldedStack
-            listToTree2 tail stack
-    | _ -> stack |> foldStack 0 |> List.map fst
+        let stack = newStackTop :: stack
+        listToTree2 tail stack
+    | head :: _ when head.nesting < stackTopNesting ->
+        let foldedStack = foldStack stack 
+        listToTree2 items foldedStack
+    | [] when stackTopNesting > 0 ->
+        let foldedStack = foldStack stack 
+        listToTree2 items foldedStack
+    | head :: tail when head.nesting = stackTopNesting ->
+        let foldedStack = foldStack stack 
+        let newStackTop = { key = head.identifier; ratio = head.ratio; childItems = [] }, head.nesting
+        let stack = newStackTop :: foldedStack
+        listToTree2 tail stack
+    | _ -> stack |> List.map fst
