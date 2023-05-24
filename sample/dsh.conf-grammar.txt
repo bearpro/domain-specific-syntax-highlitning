@@ -1,4 +1,4 @@
-statement: nesting segment "=" ratio
 nesting: /\s+/ ;
-segment: /\w+/ ;
-ratio: /^[1 0]?(.\d+)?/ ;
+identifier: /\w+/ ;
+float: /^[1 0]?(.\d+)?/ ;
+statement = nesting identifier float
