@@ -6,6 +6,28 @@ open Xunit
 open LanguageServer.HierarchicalAnalysis.ConfigurationProcessing
 open LanguageServer.HierarchicalAnalysis.ConfigurationGrammar
 open LanguageServer.HierarchicalAnalysis.HierarchicalAnalysis
+open FParsec
+
+[<Fact>]
+let ``Intermediate configuration model sccessfully parsed`` () =
+    let input = 
+        "#threshold 10\n" +
+        "a = 1\n" +
+        "b = 2\n" +
+        "    c = 3\n"
+    let result = test input
+    match result with
+    | Success(intermideateData, _, _) -> 
+        let expected = {
+            threshold = 10
+            statements = [
+                { nesting = 0; identifier = "a"; ratio = 1. }
+                { nesting = 0; identifier = "b"; ratio = 2. }
+                { nesting = 4; identifier = "c"; ratio = 3. }
+            ] }
+        Assert.Equal (expected, intermideateData)
+    | Failure _ -> 
+        Assert.Fail("Failure when parsing")
 
 [<Fact>]
 let ``Configuration statements sucessfully parsed to a tree`` () =
@@ -18,7 +40,8 @@ let ``Configuration statements sucessfully parsed to a tree`` () =
         { nesting = 4; identifier = "c.1"; ratio = 0. }
     ]
     
-    let result = listToTreeHelper input
+    let result = listToTree2 input []
+    //let result = listToTreeHelper input
 
     let expected = [
         { key = "a"; ratio = 0.; childItems = [
@@ -33,6 +56,7 @@ let ``Configuration statements sucessfully parsed to a tree`` () =
     ]
 
     Assert.Equal<ConfigurationItem>(expected, result)
+    ()
 
 [<Fact>]
 let ``Tree evaluation result ordered as expected`` () =
