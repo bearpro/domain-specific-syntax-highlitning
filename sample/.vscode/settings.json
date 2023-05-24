@@ -1,0 +1,22 @@
+{
+    "editor.semanticTokenColorCustomizations": {
+        "rules": {
+            "*.ui-captured": {
+                "foreground": "#ff00ff",
+                "bold": true
+            },
+            "*.concurrency-captured": {
+                "foreground": "#ffa600",
+                "bold": true
+            },
+            "*.sql-captured": {
+                "foreground": "#06ff65",
+                "bold": true
+            },
+            "*.concurrency-modified": {
+                "foreground": "#ff0000",
+                "bold": true
+            },
+        }
+    }
+}
