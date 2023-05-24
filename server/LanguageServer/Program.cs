@@ -3,7 +3,7 @@ using Serilog;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
 
-using LanguageServerSample;
+using LanguageServer;
 
 var logger = Log.Logger = new LoggerConfiguration()
     .Enrich.FromLogContext()
@@ -13,7 +13,7 @@ var logger = Log.Logger = new LoggerConfiguration()
 
 logger.Information("Setting up server");
 
-var server = await LanguageServer.From(options => options
+var server = await OmniSharp.Extensions.LanguageServer.Server.LanguageServer.From(options => options
     .WithInput(Console.OpenStandardInput())
     .WithOutput(Console.OpenStandardOutput())
     .ConfigureLogging(log => log
@@ -21,13 +21,12 @@ var server = await LanguageServer.From(options => options
         .AddLanguageProtocolLogging()
         .SetMinimumLevel(LogLevel.Debug))
     .WithHandler<SemanticTokensHandler>()
-    // .WithHandler<ConfigurationUpdateHandler>()
     .WithServices(x => x.AddLogging(b => b.SetMinimumLevel(LogLevel.Trace)))
     .WithServices(
         services =>
         {
+            services.AddSingleton<LanguageServer.HierarchicalAnalysis.ITokenPriorityAnalyzer, LanguageServer.HierarchicalAnalysis.TokenPriorityAnalyzer>();
             logger.Information("Configuring services");
-            services.AddSingleton<ConfigurationStateHolder>();
         }
     )
     .OnInitialize(

@@ -1,19 +1,24 @@
 using System.Text.RegularExpressions;
+using LanguageServer.HierarchicalAnalysis;
 using Microsoft.Extensions.Logging;
 using OmniSharp.Extensions.LanguageServer.Protocol;
 using OmniSharp.Extensions.LanguageServer.Protocol.Client.Capabilities;
 using OmniSharp.Extensions.LanguageServer.Protocol.Document;
 using OmniSharp.Extensions.LanguageServer.Protocol.Models;
 
-namespace LanguageServerSample;
+namespace LanguageServer;
 
 public class SemanticTokensHandler : SemanticTokensHandlerBase
 {
-    private readonly ILogger _logger;
+    private readonly ILogger logger;
+    private readonly ITokenPriorityAnalyzer tokenPriorityAnalyzer;
 
-    public SemanticTokensHandler(ILogger<SemanticTokensHandler> logger)
+    public SemanticTokensHandler(
+        ILogger<SemanticTokensHandler> logger,
+        ITokenPriorityAnalyzer tokenPriorityAnalyzer)
     {
-        _logger = logger;
+        this.logger = logger;
+        this.tokenPriorityAnalyzer = tokenPriorityAnalyzer;
     }
 
     protected override SemanticTokensRegistrationOptions CreateRegistrationOptions(
@@ -61,13 +66,14 @@ public class SemanticTokensHandler : SemanticTokensHandlerBase
         var path = DocumentUri.GetFileSystemPath(identifier);
         if (path is null)
         {
-            _logger.LogWarning("Invalid document identifier: {identifier}", identifier);
+            logger.LogWarning("Invalid document identifier: {identifier}", identifier);
             return;
         }
 
         if (path.EndsWith(".dsh.conf"))
         {
-            _logger.LogInformation("Configuration!");
+            logger.LogInformation("Configuration update");
+            await ConfigurationUpdateHandler.HandleConfigurationUpdateAsync(this.tokenPriorityAnalyzer, path, logger);
             return;
         }
 
@@ -150,11 +156,13 @@ public class SemanticTokensHandler : SemanticTokensHandlerBase
                     modifiers = modifiers.Append((string)SemanticTokenModifier.Declaration).ToArray();
                 }
 
+                var finalModifier = tokenPriorityAnalyzer.SelectPreferredModifier(modifiers);
+
                 queue.Enqueue((
                     keywordStart,
                     keywordLen,
                     SemanticTokenType.Variable,
-                    modifiers),
+                    new[] { finalModifier }),
                     keywordStart);
             }
 

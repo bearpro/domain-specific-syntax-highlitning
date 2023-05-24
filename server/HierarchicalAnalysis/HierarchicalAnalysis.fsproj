@@ -1,12 +1,17 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net7.0</TargetFramework>
   </PropertyGroup>
-
   <ItemGroup>
+    <Compile Include="Utils.fs" />
+    <Compile Include="ConfigurationGrammar.fs" />
+    <Compile Include="ConfigurationProcessing.fs" />
+    <Compile Include="HierarchicalAnalysis.fs" />
+    <Compile Include="HierarchicalAnalysisService.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
-
+  <ItemGroup>
+    <PackageReference Include="FParsec" Version="1.1.1" />
+  </ItemGroup>
 </Project>
