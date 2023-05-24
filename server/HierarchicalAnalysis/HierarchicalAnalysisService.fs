@@ -6,7 +6,7 @@ open ConfigurationProcessing
 open HierarchicalAnalysis
 
 type ITokenPriorityAnalyzer =
-    abstract member UpdateConfiguration : configurationPath: string -> Task<bool>
+    abstract member ReadConfigurationFromFile : configurationPath: string -> Task<bool>
     abstract member SelectPreferredModifier : ICollection<string> -> string
 
 type TokenPriorityAnalyzer() =
@@ -32,17 +32,21 @@ type TokenPriorityAnalyzer() =
         |> Seq.tryHead
 
     interface ITokenPriorityAnalyzer with
-        member _.UpdateConfiguration path = task {
+        member this.ReadConfigurationFromFile path = task {
             let! result = parseConfig path
 
             match result with
-            | Ok config ->
-                threshold <- config.threshold
-                preferredModifiers <- performHierarchicalAnalysis config
-                return true
-            | Error (message, fparsecError) ->
-                failwithf "%s\n%A" message fparsecError
-                return false }
+            | Ok config -> this.SetConfiguration config
+                           return true
+            | Error (message, error) -> 
+                failwithf "%s\n%A" message error
+                return false 
+            }
+
         member _.SelectPreferredModifier modifiers = 
             findMostPreferredModifier preferredModifiers modifiers
             |> Option.defaultValue null
+
+    member _.SetConfiguration config =
+            threshold <- config.threshold
+            preferredModifiers <- performHierarchicalAnalysis config

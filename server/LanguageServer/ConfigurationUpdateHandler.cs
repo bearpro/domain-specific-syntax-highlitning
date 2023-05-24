@@ -17,11 +17,17 @@ static class ConfigurationUpdateHandler
     {
         try
         {
-            var config = await tokenPriorityAnalyzer.UpdateConfiguration(path);
+            var isSuccess = await tokenPriorityAnalyzer
+                .ReadConfigurationFromFile(path);
+
+            if (!isSuccess)
+            {
+                logger.LogError("Configuration update not completed with success");
+            }
         }
         catch (Exception e)
         {
-            logger.LogError(e, "Failed to parse configuration");
+            logger.LogError(e, "Failed to update configuration from file");
         }
         
         return Unit.Value;
