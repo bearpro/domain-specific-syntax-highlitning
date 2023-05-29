@@ -75,7 +75,7 @@ _По данным Stack Overflow Developer Survey 2021_
 
 <div class="static-vs-semantic">
 
-| Статическая подсветка синтаксиса             | Семантическая подсветка синтаксиса          |
+| Обычная подсветка синтаксиса             | Семантическая подсветка синтаксиса          |
 | -                                            | -                                           |
 | ![](./pictures/semantic-highlitning-off.png) | ![](./pictures/semantic-highlitning-on.png) | 
 
