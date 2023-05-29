@@ -8,7 +8,7 @@
     <Compile Include="ConfigurationGrammar.fs" />
     <Compile Include="ConfigurationProcessing.fs" />
     <Compile Include="HierarchicalAnalysis.fs" />
-    <Compile Include="HierarchicalAnalysisService.fs" />
+    <Compile Include="TokenPriorityAnalyzer.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
   <ItemGroup>
