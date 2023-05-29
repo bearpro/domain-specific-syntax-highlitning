@@ -1,0 +1,304 @@
+<mxfile host="65bd71144e">
+    <diagram id="FZsjKsAyXFP-kN_7O33l" name="uml-sequence">
+        <mxGraphModel dx="1062" dy="814" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="shape=umlLifeline;participant=umlActor;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;verticalAlign=top;spacingTop=36;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="110" y="250" width="20" height="300" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value=":VSCode Frontend" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="250" width="100" height="300" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="3" vertex="1">
+                    <mxGeometry x="45" y="80" width="10" height="220" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value=":VSCode Backend" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="510" y="250" width="100" height="300" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="4" vertex="1">
+                    <mxGeometry x="45" y="140" width="10" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value=":VSCode TextMate обработчик" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="665" y="250" width="100" height="300" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="5" vertex="1">
+                    <mxGeometry x="45" y="140" width="10" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="Открытие файла" style="html=1;verticalAlign=bottom;startArrow=oval;endArrow=block;startSize=8;" parent="1" source="2" target="6" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="205" y="330" as="sourcePoint"/>
+                        <Array as="points">
+                            <mxPoint x="190" y="330"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="9" value="Новый файл открыт" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;" parent="1" source="6" target="8" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="350" y="350" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="11" value=":VSCode LSP-шина" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="815" y="250" width="100" height="300" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="11" vertex="1">
+                    <mxGeometry x="45" y="220" width="10" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value=":Языковой сервер" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="955" y="250" width="100" height="300" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="12" vertex="1">
+                    <mxGeometry x="45" y="230" width="10" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="Информция о токенах" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;" parent="1" source="8" target="6" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="350" y="426" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="13" value="Отображение файла&lt;br&gt;(полное)" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" parent="1" source="6" target="2" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="285" y="512" as="targetPoint"/>
+                        <mxPoint x="430" y="512" as="sourcePoint"/>
+                        <Array as="points">
+                            <mxPoint x="200" y="550"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="14" value=":Хранилище конфигурации" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="370" y="250" width="100" height="300" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="14" vertex="1">
+                    <mxGeometry x="45" y="80" width="10" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="Запрос параметров &lt;br&gt;визуализации" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;" parent="1" source="6" target="18" edge="1">
+                    <mxGeometry x="0.0714" relative="1" as="geometry">
+                        <mxPoint x="935" y="460" as="sourcePoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="20" value="Параметры &lt;br&gt;визуализации" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;" parent="1" source="18" target="6" edge="1">
+                    <mxGeometry x="0.0714" y="1" relative="1" as="geometry">
+                        <mxPoint x="935" y="536" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="23" value="Текст файла + &lt;br&gt;язык файла" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;" parent="1" source="8" target="22" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="640" y="390" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="24" value="Карта областей TextMate" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;" parent="1" source="22" target="8" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="640" y="466" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="25" value="Информция о токенах" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" parent="1" source="8" target="6" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="285" y="464.5" as="targetPoint"/>
+                        <mxPoint x="430" y="464.5" as="sourcePoint"/>
+                        <Array as="points">
+                            <mxPoint x="420" y="460"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="26" value="Отображение файла&lt;br&gt;(упрощённое)" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" parent="1" source="6" target="2" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="129.81034482758616" y="550" as="targetPoint"/>
+                        <mxPoint x="275" y="550" as="sourcePoint"/>
+                        <Array as="points">
+                            <mxPoint x="200" y="460"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="28" value="Имя файла + инцормация о рабочей директории" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;" parent="1" source="8" target="27" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="790" y="460" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="31" value="Имя файла + &lt;br&gt;запрос подсветки &lt;br&gt;синтаксиса" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;" parent="1" source="27" target="30" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="930" y="465" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="32" value="Карта распознанных &lt;br&gt;токенов" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;" parent="1" source="30" target="27" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="930" y="541" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="29" value="Карта распознанных &lt;br&gt;токенов во &lt;br&gt;внутреннем &lt;br&gt;формате" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;" parent="1" source="27" target="8" edge="1">
+                    <mxGeometry x="0.3559" relative="1" as="geometry">
+                        <mxPoint x="790" y="536" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="U95GP2JPRWKtoLpMJ-Vs" name="dfd">
+        <mxGraphModel dx="1062" dy="814" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="uFo7qdIQ5bOel4Wi0rdT-11" value="Области TextMate" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="1" source="uFo7qdIQ5bOel4Wi0rdT-1" target="uFo7qdIQ5bOel4Wi0rdT-17" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="455" y="520" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="400" y="500"/>
+                            <mxPoint x="400" y="500"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="uFo7qdIQ5bOel4Wi0rdT-19" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;jumpStyle=arc;" parent="1" source="uFo7qdIQ5bOel4Wi0rdT-6" target="uFo7qdIQ5bOel4Wi0rdT-12" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="280" y="500"/>
+                            <mxPoint x="280" y="420"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="uFo7qdIQ5bOel4Wi0rdT-1" value="Применение грамматик TextMate" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="295" y="470" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="uFo7qdIQ5bOel4Wi0rdT-7" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;jumpStyle=arc;" parent="1" source="uFo7qdIQ5bOel4Wi0rdT-4" target="uFo7qdIQ5bOel4Wi0rdT-1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="235" y="350"/>
+                            <mxPoint x="325" y="350"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="uFo7qdIQ5bOel4Wi0rdT-18" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="1" source="uFo7qdIQ5bOel4Wi0rdT-4" target="uFo7qdIQ5bOel4Wi0rdT-12" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="235" y="350"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="uFo7qdIQ5bOel4Wi0rdT-4" value="&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;Исходный код" style="html=1;dashed=0;whitespace=wrap;shape=mxgraph.dfd.dataStoreID;align=left;spacingLeft=3;points=[[0,0],[0.5,0],[1,0],[0,0.5],[1,0.5],[0,1],[0.5,1],[1,1]];" parent="1" vertex="1">
+                    <mxGeometry x="160" y="310" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="uFo7qdIQ5bOel4Wi0rdT-8" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;jumpStyle=arc;" parent="1" source="uFo7qdIQ5bOel4Wi0rdT-5" target="uFo7qdIQ5bOel4Wi0rdT-1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="235" y="400"/>
+                            <mxPoint x="325" y="400"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="uFo7qdIQ5bOel4Wi0rdT-5" value="&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;Грамматики TextMate" style="html=1;dashed=0;whitespace=wrap;shape=mxgraph.dfd.dataStoreID;align=left;spacingLeft=3;points=[[0,0],[0.5,0],[1,0],[0,0.5],[1,0.5],[0,1],[0.5,1],[1,1]];" parent="1" vertex="1">
+                    <mxGeometry x="160" y="365" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="uFo7qdIQ5bOel4Wi0rdT-9" value="Запрос &lt;br&gt;отображенийя&lt;br&gt;файла" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="uFo7qdIQ5bOel4Wi0rdT-6" target="uFo7qdIQ5bOel4Wi0rdT-1" edge="1">
+                    <mxGeometry x="-0.1304" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="uFo7qdIQ5bOel4Wi0rdT-6" value="Начало" style="html=1;dashed=0;whitespace=wrap;shape=mxgraph.dfd.start" parent="1" vertex="1">
+                    <mxGeometry x="100" y="485" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="uFo7qdIQ5bOel4Wi0rdT-21" value="Семантические&lt;br&gt;токены" style="edgeStyle=orthogonalEdgeStyle;jumpStyle=arc;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="uFo7qdIQ5bOel4Wi0rdT-12" target="uFo7qdIQ5bOel4Wi0rdT-17" edge="1">
+                    <mxGeometry x="-0.2414" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="uFo7qdIQ5bOel4Wi0rdT-12" value="Обработка языковым сервером" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="365" y="390" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="uFo7qdIQ5bOel4Wi0rdT-40" style="edgeStyle=orthogonalEdgeStyle;jumpStyle=arc;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="uFo7qdIQ5bOel4Wi0rdT-17" target="uFo7qdIQ5bOel4Wi0rdT-39" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="uFo7qdIQ5bOel4Wi0rdT-17" value="Отображение" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="570" y="470" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="uFo7qdIQ5bOel4Wi0rdT-22" value="Области TextMate" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="1" source="uFo7qdIQ5bOel4Wi0rdT-24" target="uFo7qdIQ5bOel4Wi0rdT-34" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="455" y="800" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="355" y="830"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="uFo7qdIQ5bOel4Wi0rdT-23" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;jumpStyle=arc;" parent="1" source="uFo7qdIQ5bOel4Wi0rdT-31" target="uFo7qdIQ5bOel4Wi0rdT-33" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="280" y="780"/>
+                            <mxPoint x="280" y="700"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="uFo7qdIQ5bOel4Wi0rdT-24" value="Применение грамматик TextMate" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="295" y="750" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="uFo7qdIQ5bOel4Wi0rdT-25" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;jumpStyle=arc;" parent="1" source="uFo7qdIQ5bOel4Wi0rdT-27" target="uFo7qdIQ5bOel4Wi0rdT-24" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="235" y="630"/>
+                            <mxPoint x="325" y="630"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="uFo7qdIQ5bOel4Wi0rdT-26" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="1" source="uFo7qdIQ5bOel4Wi0rdT-27" target="uFo7qdIQ5bOel4Wi0rdT-33" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="235" y="630"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="uFo7qdIQ5bOel4Wi0rdT-27" value="&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;Исходный код" style="html=1;dashed=0;whitespace=wrap;shape=mxgraph.dfd.dataStoreID;align=left;spacingLeft=3;points=[[0,0],[0.5,0],[1,0],[0,0.5],[1,0.5],[0,1],[0.5,1],[1,1]];" parent="1" vertex="1">
+                    <mxGeometry x="160" y="590" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="uFo7qdIQ5bOel4Wi0rdT-28" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;jumpStyle=arc;" parent="1" source="uFo7qdIQ5bOel4Wi0rdT-29" target="uFo7qdIQ5bOel4Wi0rdT-24" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="235" y="680"/>
+                            <mxPoint x="325" y="680"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="uFo7qdIQ5bOel4Wi0rdT-29" value="&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;Грамматики TextMate" style="html=1;dashed=0;whitespace=wrap;shape=mxgraph.dfd.dataStoreID;align=left;spacingLeft=3;points=[[0,0],[0.5,0],[1,0],[0,0.5],[1,0.5],[0,1],[0.5,1],[1,1]];" parent="1" vertex="1">
+                    <mxGeometry x="160" y="645" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="uFo7qdIQ5bOel4Wi0rdT-30" value="Запрос &lt;br&gt;отображенийя&lt;br&gt;файла" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="uFo7qdIQ5bOel4Wi0rdT-31" target="uFo7qdIQ5bOel4Wi0rdT-24" edge="1">
+                    <mxGeometry x="-0.1304" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="uFo7qdIQ5bOel4Wi0rdT-31" value="Начало" style="html=1;dashed=0;whitespace=wrap;shape=mxgraph.dfd.start" parent="1" vertex="1">
+                    <mxGeometry x="100" y="765" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="uFo7qdIQ5bOel4Wi0rdT-32" value="Семантические&lt;br&gt;токены" style="edgeStyle=orthogonalEdgeStyle;jumpStyle=arc;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="uFo7qdIQ5bOel4Wi0rdT-33" target="uFo7qdIQ5bOel4Wi0rdT-36" edge="1">
+                    <mxGeometry x="-0.0606" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="uFo7qdIQ5bOel4Wi0rdT-33" value="Обработка языковым сервером" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="365" y="670" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="uFo7qdIQ5bOel4Wi0rdT-42" style="edgeStyle=orthogonalEdgeStyle;jumpStyle=arc;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="uFo7qdIQ5bOel4Wi0rdT-34" target="uFo7qdIQ5bOel4Wi0rdT-41" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="uFo7qdIQ5bOel4Wi0rdT-34" value="Отображение" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="680" y="800" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="uFo7qdIQ5bOel4Wi0rdT-37" style="edgeStyle=orthogonalEdgeStyle;jumpStyle=arc;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="uFo7qdIQ5bOel4Wi0rdT-35" target="uFo7qdIQ5bOel4Wi0rdT-36" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="uFo7qdIQ5bOel4Wi0rdT-35" value="&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;Предпочтения&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;пользователя" style="html=1;dashed=0;whitespace=wrap;shape=mxgraph.dfd.dataStoreID;align=left;spacingLeft=3;points=[[0,0],[0.5,0],[1,0],[0,0.5],[1,0.5],[0,1],[0.5,1],[1,1]];" parent="1" vertex="1">
+                    <mxGeometry x="625" y="590" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="uFo7qdIQ5bOel4Wi0rdT-38" value="Семантические&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;токены" style="edgeStyle=orthogonalEdgeStyle;jumpStyle=arc;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="uFo7qdIQ5bOel4Wi0rdT-36" target="uFo7qdIQ5bOel4Wi0rdT-34" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="uFo7qdIQ5bOel4Wi0rdT-36" value="Выбор предпочтительной альтернативы" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="640" y="670" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="uFo7qdIQ5bOel4Wi0rdT-39" value="Конец" style="html=1;dashed=0;whitespace=wrap;shape=mxgraph.dfd.start" parent="1" vertex="1">
+                    <mxGeometry x="720" y="485" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="uFo7qdIQ5bOel4Wi0rdT-41" value="Конец" style="html=1;dashed=0;whitespace=wrap;shape=mxgraph.dfd.start" parent="1" vertex="1">
+                    <mxGeometry x="830" y="815" width="80" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
