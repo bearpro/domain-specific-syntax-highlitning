@@ -1,0 +1,28 @@
+<mxfile host="65bd71144e">
+    <diagram id="riRUKphvjWqbh2xyCcSe" name="Page-1">
+        <mxGraphModel dx="1062" dy="904" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="use" style="edgeStyle=none;html=1;dashed=1;fontSize=12;endArrow=open;endFill=0;" edge="1" parent="1" source="3" target="4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="Intellij Platform" style="shape=folder;fontStyle=1;spacingTop=0;tabWidth=100;tabHeight=20;tabPosition=left;verticalAlign=bottom;align=left;labelPosition=left;verticalLabelPosition=top;spacingLeft=265;spacing=0;spacingBottom=-16;spacingRight=0;" vertex="1" parent="1">
+                    <mxGeometry x="480" y="270" width="260" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Language support plugin" style="shape=folder;fontStyle=1;spacingTop=0;tabWidth=160;tabHeight=20;tabPosition=left;verticalAlign=bottom;align=left;labelPosition=left;verticalLabelPosition=top;spacingLeft=265;spacing=0;spacingBottom=-16;spacingRight=0;" vertex="1" parent="1">
+                    <mxGeometry x="480" y="70" width="260" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="File type recognition&#10;Lexical analysis&#10;Syntax highlighting&#10;Formatting&#10;Code insight and code completion&#10;Inspections and quick-fixes&#10;Intention actions" style="rounded=0;align=left;verticalAlign=top;spacing=2;horizontal=1;fontSize=12;whiteSpace=wrap;" vertex="1" parent="1">
+                    <mxGeometry x="490" y="100" width="240" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="use" style="edgeStyle=none;html=1;fontSize=12;dashed=1;endArrow=open;endFill=0;" edge="1" parent="1" source="7" target="3">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="Intellij Frontend" style="shape=folder;fontStyle=1;spacingTop=0;tabWidth=100;tabHeight=20;tabPosition=left;verticalAlign=bottom;align=left;labelPosition=left;verticalLabelPosition=top;spacingLeft=265;spacing=0;spacingBottom=-16;spacingRight=0;" vertex="1" parent="1">
+                    <mxGeometry x="480" y="360" width="260" height="50" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

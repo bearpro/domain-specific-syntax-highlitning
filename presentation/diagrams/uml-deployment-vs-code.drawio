@@ -1,0 +1,39 @@
+<mxfile host="65bd71144e">
+    <diagram id="nDCvw1qwsP7chfScJSm0" name="Page-1">
+        <mxGraphModel dx="1517" dy="1291" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="21" value="use" style="edgeStyle=none;html=1;dashed=1;fontSize=12;endArrow=open;endFill=0;" parent="1" source="24" target="31" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="698.3928571428573" y="600" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="22" value="use" style="edgeStyle=none;html=1;dashed=1;fontSize=12;endArrow=open;endFill=0;" parent="1" source="24" target="29" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="Visual Studio Code backend" style="shape=folder;fontStyle=1;spacingTop=0;tabWidth=200;tabHeight=20;tabPosition=left;verticalAlign=bottom;align=left;labelPosition=left;verticalLabelPosition=top;spacingLeft=265;spacing=0;spacingBottom=-16;spacingRight=0;" parent="1" vertex="1">
+                    <mxGeometry x="480" y="710" width="260" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="use" style="edgeStyle=none;html=1;fontSize=12;dashed=1;endArrow=open;endFill=0;" parent="1" source="28" target="24" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="Visual Studio Code frontend" style="shape=folder;fontStyle=1;spacingTop=0;tabWidth=168;tabHeight=20;tabPosition=left;verticalAlign=bottom;align=left;labelPosition=left;verticalLabelPosition=top;spacingLeft=265;spacing=0;spacingBottom=-16;spacingRight=0;" parent="1" vertex="1">
+                    <mxGeometry x="492.5" y="810" width="260" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="Language Server" style="shape=folder;fontStyle=1;spacingTop=0;tabWidth=160;tabHeight=20;tabPosition=left;verticalAlign=bottom;align=left;labelPosition=left;verticalLabelPosition=top;spacingLeft=265;spacing=0;spacingBottom=-16;spacingRight=0;" parent="1" vertex="1">
+                    <mxGeometry x="342.5" y="450" width="260" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="Syntax highlighting&#10;Diagnostics (errors and warnings)&#10;Code completion&#10;Hover information&#10;Signature help&#10;Document symbols&#10;...etc" style="rounded=0;align=left;verticalAlign=top;spacing=2;horizontal=1;fontSize=12;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="352.5" y="480" width="240" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="TextMate bundle" style="shape=folder;fontStyle=1;spacingTop=0;tabWidth=160;tabHeight=20;tabPosition=left;verticalAlign=bottom;align=left;labelPosition=left;verticalLabelPosition=top;spacingLeft=265;spacing=0;spacingBottom=-16;spacingRight=0;" parent="1" vertex="1">
+                    <mxGeometry x="620" y="530" width="260" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="Syntax highlighting" style="rounded=0;align=left;verticalAlign=top;spacing=2;horizontal=1;fontSize=12;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="630" y="560" width="240" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
