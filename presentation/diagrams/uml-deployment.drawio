@@ -1,0 +1,46 @@
+<mxfile host="65bd71144e">
+    <diagram id="inPWfskrHpSKjIQZmOP5" name="Page-1">
+        <mxGraphModel dx="1062" dy="904" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="Visual Studio Code" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;verticalAlign=top;align=left;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+                    <mxGeometry x="340" y="280" width="410" height="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="Visual Studio Code frontend" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;verticalAlign=top;align=left;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+                    <mxGeometry x="360" y="330" width="370" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Visual Studio Code backend" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;verticalAlign=top;align=left;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+                    <mxGeometry x="360" y="500" width="370" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="Language Client (расширение)" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;verticalAlign=top;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="370" y="550" width="350" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="Language Server" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;verticalAlign=top;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="340" y="700" width="410" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="use (LSP/json-rpc)" style="endArrow=open;endSize=12;dashed=1;html=1;" edge="1" parent="1" source="4" target="6">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="420" y="660" as="sourcePoint"/>
+                        <mxPoint x="580" y="660" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="8" value="Dynamic Syntax Highlitning" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;verticalAlign=top;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="340" y="840" width="410" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="use (clr)" style="endArrow=open;endSize=12;dashed=1;html=1;" edge="1" parent="1" source="6" target="8">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="555.3681257014591" y="630" as="sourcePoint"/>
+                        <mxPoint x="555.8199999999999" y="703.6499999999999" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="10" value="use (node)" style="endArrow=open;endSize=12;dashed=1;html=1;strokeColor=default;labelBackgroundColor=#f5f5f5;" edge="1" parent="1" source="3" target="4">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="555" y="630" as="sourcePoint"/>
+                        <mxPoint x="555" y="710" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
