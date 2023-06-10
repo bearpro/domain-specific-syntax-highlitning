@@ -71,6 +71,9 @@ _По данным Stack Overflow Developer Survey 2021_
 
 <style>
     div.static-vs-semantic img { width: 10em; }
+    td, th, tr {
+     border: none!important;
+    }
 </style>
 
 <div class="static-vs-semantic">
@@ -128,11 +131,27 @@ _По данным Stack Overflow Developer Survey 2021_
 - Использует аппарат теории принятия решений для выбора предпочтительной альтернативы для отображения
 - Совместима с существующими реализациями и IDE
 
+--- 
+
+# Потоки данных в системе подсветки синтаксиса
+<style>
+    img { width: 90%}
+</style>
+
+При использовании семантической подсветки синтаксиса
+
+![](./pictures/dfd-as-is.png)
+
 ---
 
-# Структура реализации
+# Потоки данных в системе подсветки синтаксиса
+<style>
+    img { width: 90%}
+</style>
 
-![](./pictures/dsh-how-it-works.png)
+При использовании доменной подсветки синтаксиса
+
+![](./pictures/dfd-to-be.png)
 
 ---
 
