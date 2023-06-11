@@ -8,7 +8,7 @@
    version="1.1"
    id="svg1620"
    inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
-   sodipodi:docname="header-ending-arrow.svg"
+   sodipodi:docname="header-ending-arrow-r.svg"
    inkscape:export-filename="header-ending-arrow-r.svg"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
@@ -27,9 +27,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="2.3912074"
-     inkscape:cx="309.4671"
-     inkscape:cy="412.344"
+     inkscape:zoom="3.3816779"
+     inkscape:cx="61.507927"
+     inkscape:cy="96.99327"
      inkscape:window-width="1920"
      inkscape:window-height="1129"
      inkscape:window-x="-8"
@@ -44,15 +44,8 @@
      id="layer1"
      transform="translate(-84.073938,-78.918699)">
     <path
-       id="rect1793"
-       style="fill:#ffffff;stroke:none;stroke-width:0.486057;stroke-opacity:1"
-       d="M 84.416036,78.918697 106.72424,100.61195 V 78.918697 Z m 22.308204,21.703583 -22.650302,22.02501 h 22.650302 z" />
-    <rect
-       style="fill:#ffffff;stroke:none;stroke-width:0.71881;stroke-opacity:1"
-       id="rect6835"
-       width="18.229328"
-       height="43.733791"
-       x="106.58211"
-       y="78.919991" />
+       id="rect475"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.732749"
+       d="M 83.682747 78.136318 L 83.682747 78.231919 L 106.31547 100.86516 L 83.743726 123.43743 L 125.77579 123.43743 L 125.77579 78.136318 L 83.682747 78.136318 z " />
   </g>
 </svg>
