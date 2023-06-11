@@ -1,0 +1,87 @@
+/* @theme rtu-mirea */
+
+@import 'default';
+
+.slide_inner {
+  margin-top: 100px
+}
+
+section>h1 {
+  background-color: #0070c0;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding-bottom: 0px;
+  margin-right: auto;
+}
+
+h1::after {
+  background-image: url("./style-assets/header-ending-arrow-r.svg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: top 0px right -40px;
+  width: 120px;
+  height: 100%;
+  display: flex;
+  z-index: 1000;
+  content: " ";
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+section::after {
+  left: 30px;
+  width: 3em;
+  height: 3em;
+  background-image: url("./style-assets/page-number-rhomb.svg");
+  color: white;
+  background-size: contain;
+  background-repeat: no-repeat;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+div.credentials-wrapper h1 {
+  color: #0070c0;
+  background: none;
+}
+
+div.credentials-wrapper {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 6em auto;
+  gap: 0px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+div.mirea-logo {
+  background-image: url("./style-assets/mirea-emblem.png");
+  background-repeat: no-repeat;
+  background-size: 6em;
+  height: 7em;
+  width: 6em;
+  grid-row: 1;
+  grid-column: 1;
+}
+
+div.mirea-right-to-logo {
+  grid-row: 1;
+  grid-column: 2;
+  line-height: 1;
+  font-size: 27px;
+}
+
+div.mirea-below-logo {
+  grid-row: 2;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+div.mirea-below-logo>h1 {
+  margin-top: 0px;
+}
+
+section[data-marpit-pagination="1"]::after {
+  display: none;
+}
