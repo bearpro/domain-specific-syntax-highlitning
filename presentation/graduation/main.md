@@ -194,15 +194,31 @@ _По данным Stack Overflow Developer Survey 2021_
 
 ---
 
-# Реализация языкового сервера
-удолить
-![](./pictures/uml-classes-server.horisontal.png)
+# Результаты работы
+<style>
+    img { width: 70%}
+</style>
 
----
+<div class="side-by-side">
 
-# Пезультаты работы
+<div class="left-side">
 
-- Акты внедрения
+Акт о внедрении в ООО "Френдворк"
+
+![](./pictures/deployment-cert-friendwork.png)
+
+</div>
+
+<div class="right-side">
+
+Акт о внедрении в ООО "Сетератор"
+
+![](./pictures/deployment-cert-seterator.png)
+
+</div>
+
+</div>
+
 
 --- 
 
