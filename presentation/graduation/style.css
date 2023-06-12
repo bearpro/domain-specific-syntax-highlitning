@@ -13,6 +13,7 @@ section>h1 {
   align-items: center;
   padding-bottom: 0px;
   margin-right: auto;
+  padding-left: 12px;
 }
 
 h1::after {
@@ -84,4 +85,17 @@ div.mirea-below-logo>h1 {
 
 section[data-marpit-pagination="1"]::after, section[data-marpit-pagination="12"]::after {
   display: none;
+}
+
+div.side-by-side {
+  display: grid;
+  column-gap: 1em;
+}
+
+div.left-side {
+  grid-column: 1;
+}
+
+div.right-side {
+  grid-column: 2;
 }
