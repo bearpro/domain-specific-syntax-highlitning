@@ -83,7 +83,7 @@ div.mirea-below-logo>h1 {
   margin-top: 0px;
 }
 
-section[data-marpit-pagination="1"]::after, section[data-marpit-pagination="12"]::after {
+section[data-marpit-pagination="1"]::after, section[data-marpit-pagination="13"]::after {
   display: none;
 }
 
